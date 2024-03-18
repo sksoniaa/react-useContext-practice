@@ -1,34 +1,29 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+// useContext - is used to manage flobal data in react applications
+// -- Global state
+// -- Services
+// -- Themes
+// -- user settings
 
+
+// TO CREATE CONTEXT:
+// 1. Creating the context
+// 2. Providing the context
+// 3. Consuming the context
+
+
+
+import { useState, createContext } from "react"
+import MainComponent from "./MainComponent"
+
+export const LoginContext = createContext();
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+    <LoginContext.Provider value={true}>
       <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+        <MainComponent />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </LoginContext.Provider>
   )
 }
 
