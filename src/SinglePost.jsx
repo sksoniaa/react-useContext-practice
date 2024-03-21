@@ -1,5 +1,5 @@
 import { useContext } from "react"
-import { LoginContext } from "./App";
+import { LoginContext } from "./context/LoginContextProvider";
 
 export default function SinglePost() {
   const login = useContext(LoginContext)

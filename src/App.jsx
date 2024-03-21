@@ -12,18 +12,17 @@
 
 
 
-import { useState, createContext } from "react"
+import { createContext } from "react"
 import MainComponent from "./MainComponent"
+import LoginContextProvider from "./context/LoginContextProvider";
 
 export const LoginContext = createContext();
 function App() {
 
   return (
-    <LoginContext.Provider value={true}>
-      <div>
+    <LoginContextProvider>
         <MainComponent />
-      </div>
-    </LoginContext.Provider>
+    </LoginContextProvider>
   )
 }
 
